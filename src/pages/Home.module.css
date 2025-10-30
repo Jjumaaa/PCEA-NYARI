@@ -1,0 +1,138 @@
+/* --- Hero Section Styling --- */
+.hero {
+    position: relative;
+    min-height: 80vh; /* Responsive height */
+    color: var(--color-light-text);
+    overflow: hidden;
+}
+
+.slide {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    /* Note: Slider functionality requires JavaScript/state, which is outside basic conversion scope. 
+       We'll style the active slide here. */
+}
+
+.heroContent {
+    max-width: 600px;
+    text-align: center;
+    padding: var(--spacing-md);
+}
+
+.heroContent h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.heroContent p {
+    font-size: 1.25rem;
+    margin-bottom: var(--spacing-md);
+}
+
+.heroButtons {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-sm);
+}
+
+/* Hero Button Base */
+.btnLarge {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: var(--border-radius);
+    transition: all var(--transition-speed);
+}
+
+/* Primary Hero Button */
+.btnLarge.primary {
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
+}
+
+.btnLarge.primary:hover {
+    background-color: #e5a400;
+}
+
+/* Outline Hero Button */
+.btnLarge.outline {
+    background: transparent;
+    color: var(--color-light-text);
+    border: 2px solid var(--color-light-text);
+}
+
+.btnLarge.outline:hover {
+    background: var(--color-light-text);
+    color: var(--color-primary);
+}
+
+/* --- Quick Info Bar Styling --- */
+.quickInfo {
+    background-color: var(--color-light-bg);
+    padding: 1.5rem 0;
+}
+
+.infoContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns on desktop */
+    gap: var(--spacing-md);
+    text-align: center;
+}
+
+.infoItem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    background-color: var(--color-background);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.infoItem i {
+    font-size: 2rem;
+    color: var(--color-primary);
+    margin-right: 1rem;
+}
+
+.infoItem h4 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+    color: var(--color-primary);
+}
+
+.infoItem p {
+    font-size: 0.9rem;
+    color: var(--color-text);
+}
+
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 768px) {
+    .heroContent h2 {
+        font-size: 2rem;
+    }
+    .heroContent p {
+        font-size: 1rem;
+    }
+    .heroButtons {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+    .btnLarge {
+        width: 100%;
+    }
+    .infoContainer {
+        grid-template-columns: 1fr; /* Single column on mobile */
+    }
+    .infoItem {
+        justify-content: flex-start; /* Align text to the left for better readability */
+    }
+}
