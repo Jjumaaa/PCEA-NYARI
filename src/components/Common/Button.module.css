@@ -1,0 +1,67 @@
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    border: 2px solid transparent;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none; /* Important for <a> tags */
+}
+
+/* Variant: Primary */
+.primary {
+    background-color: var(--color-primary);
+    color: var(--color-light-text);
+    border-color: var(--color-primary);
+}
+
+.primary:hover {
+    background-color: #003e33;
+    border-color: #003e33;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Variant: Outline */
+.outline {
+    background-color: transparent;
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+}
+
+.outline:hover {
+    background-color: var(--color-primary);
+    color: var(--color-light-text);
+}
+
+/* Variant: Secondary (Used in Give section, etc.) */
+.secondary {
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
+    border-color: var(--color-secondary);
+}
+
+.secondary:hover {
+    background-color: #e5a400;
+    border-color: #e5a400;
+}
+
+/* Size: Small */
+.small {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+}
+
+/* Size: Large (for Hero) */
+.large {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+}
+
+/* Block style */
+.block {
+    display: block;
+    width: 100%;
+}
