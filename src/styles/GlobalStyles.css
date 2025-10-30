@@ -1,0 +1,63 @@
+/* Importing Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Playfair+Display:wght@400;700&display=swap');
+
+/* Global Variables (The "Cool CSS" Foundation) */
+:root {
+    --color-primary: #004d40; /* Deep Teal/Green for PCEA's common branding colors */
+    --color-secondary: #ffb300; /* Amber/Gold for accents */
+    --color-text: #333333;
+    --color-light-text: #f5f5f5;
+    --color-background: #ffffff;
+    --color-light-bg: #f9f9f9;
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 4rem;
+    --border-radius: 8px;
+    --transition-speed: 0.3s;
+}
+
+/* CSS Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px; /* Base for REM units */
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: var(--color-text);
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Playfair Display', serif;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-primary);
+    transition: color var(--transition-speed), opacity var(--transition-speed);
+}
+
+ul {
+    list-style: none;
+}
+
+/* Reusable Utility Classes */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-sm); /* Responsive padding */
+}
+
+.section-padding {
+    padding: var(--spacing-lg) 0;
+}
