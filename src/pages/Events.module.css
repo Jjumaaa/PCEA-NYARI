@@ -1,0 +1,47 @@
+.eventsCalendar {
+    max-width: 600px; /* Constrain the calendar width */
+    margin: 0 auto 3rem;
+    padding: 1rem;
+    border: 1px solid #e0e0e0;
+    border-radius: var(--border-radius);
+    background-color: var(--color-light-bg);
+}
+
+.calendarHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.calendarHeader h3 {
+    font-size: 1.5rem;
+    color: var(--color-primary);
+}
+
+.calendarGrid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /* 7 days a week */
+    gap: 0.5rem;
+    text-align: center;
+    /* Styles for the calendar days would go here if implemented */
+}
+
+.eventsList {
+    margin-top: 2rem;
+}
+
+.eventsCta {
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
+    border-radius: var(--border-radius);
+    margin-top: 3rem;
+}
+
+.eventsCta p {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}

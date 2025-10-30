@@ -1,6 +1,7 @@
 import React from 'react';
 import SectionHeader from '../components/Layout/SectionHeader';
 import ContactForm from '../components/Forms/ContactForm';
+import Button from '../components/Common/Button';
 import styles from './Contact.module.css'; // Create this file
 
 const Contact = () => {

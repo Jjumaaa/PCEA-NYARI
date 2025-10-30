@@ -1,0 +1,59 @@
+.giveGrid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr; /* Info on left, form slightly wider on right */
+    gap: 3rem;
+    align-items: flex-start;
+}
+
+/* Info Column */
+.giveInfo h3 {
+    font-size: 2rem;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+}
+
+.givingOptions {
+    margin: 2rem 0;
+}
+
+.givingOptions h4 {
+    font-size: 1.3rem;
+    color: var(--color-secondary);
+    margin-bottom: 1rem;
+}
+
+.givingOptions ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.givingOptions li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+    color: #444;
+}
+
+.givingOptions i {
+    color: var(--color-primary);
+    margin-right: 0.8rem;
+    font-size: 1.2rem;
+}
+
+.financialTransparency {
+    border-top: 1px dashed #ddd;
+    padding-top: 1.5rem;
+}
+
+.financialTransparency h4 {
+    color: var(--color-primary);
+    margin-bottom: 0.75rem;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 900px) {
+    .giveGrid {
+        grid-template-columns: 1fr; /* Stack columns */
+    }
+}

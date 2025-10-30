@@ -1,0 +1,91 @@
+.aboutSection {
+    background-color: var(--color-background);
+}
+
+/* Mission, Vision, Values Grid */
+.aboutGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-bottom: var(--spacing-lg);
+    text-align: center;
+}
+
+.aboutCard {
+    padding: 1.5rem;
+    border: 1px solid #eee;
+    border-radius: var(--border-radius);
+    transition: box-shadow 0.3s ease;
+}
+
+.aboutCard:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+.aboutIcon {
+    font-size: 2.5rem;
+    color: var(--color-secondary);
+    margin-bottom: 0.75rem;
+}
+
+.aboutCard h3 {
+    color: var(--color-primary);
+    font-size: 1.4rem;
+}
+
+/* Our Story Content */
+.aboutContent {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.aboutText h3 {
+    font-size: 2rem;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+}
+
+.aboutText p {
+    margin-bottom: 1rem;
+    line-height: 1.7;
+}
+
+.aboutImage img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.imageCaption {
+    text-align: center;
+    font-style: italic;
+    font-size: 0.85rem;
+    color: #999;
+    margin-top: 0.5rem;
+}
+
+.beliefsSection {
+    margin-top: var(--spacing-lg);
+}
+
+.beliefsSection h3 {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--color-primary);
+    margin-bottom: 1.5rem;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 900px) {
+    .aboutContent {
+        grid-template-columns: 1fr; /* Stack text and image */
+        gap: 2rem;
+    }
+    .aboutImage {
+        order: -1; /* Move image to the top on mobile */
+    }
+}

@@ -1,8 +1,10 @@
+// src/pages/Sermons.js
+
 import React, { useState } from 'react';
 import SectionHeader from '../components/Layout/SectionHeader';
 import SermonCard from '../components/Cards/SermonCard';
 import Button from '../components/Common/Button';
-import styles from './Sermons.module.css'; // Create this file
+import styles from './Sermons.module.css';
 
 // Placeholder data for sermons
 const sermonData = [
@@ -17,8 +19,8 @@ const Sermons = () => {
     const filteredSermons = sermonData.filter(sermon => {
         if (filter === 'all') return true;
         // In a real app, you'd use a more sophisticated filter based on the tags
-        return sermon.seriesTag === filter || sermon.speakerTag === filter; 
-    });
+        return sermon.seriesTag === filter || sermon.speakerTag === filter;
+    }); // <-- 'filteredSermons' is assigned a value here
 
     return (
         <section id="sermons" className="section-padding">
@@ -38,7 +40,8 @@ const Sermons = () => {
                 </div>
 
                 <div className={styles.sermonsGrid}>
-                    {sermonData.map((sermon, index) => (
+                    {/* FIX: Use filteredSermons instead of sermonData */}
+                    {filteredSermons.map((sermon, index) => ( 
                         <SermonCard
                             key={index}
                             title={sermon.title}
@@ -64,4 +67,3 @@ const Sermons = () => {
 };
 
 export default Sermons;
-// Note: Create Sermons.module.css (Filters bar styling, SermonsGrid layout)

@@ -1,0 +1,107 @@
+.ministryDetail {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr; /* Info on left, image/CTA on right */
+    gap: 3rem;
+    background-color: var(--color-background);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.ministryInfo h3 {
+    font-size: 2rem;
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+}
+
+.ministryMotto {
+    font-style: italic;
+    color: var(--color-secondary);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.ministryPrograms {
+    margin: 1.5rem 0;
+}
+
+.ministryPrograms h4 {
+    color: var(--color-primary);
+    font-size: 1.2rem;
+    margin-bottom: 0.75rem;
+}
+
+.ministryPrograms ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+}
+
+.ministryLeaders {
+    margin-top: 2rem;
+    border-top: 1px dashed #eee;
+    padding-top: 1.5rem;
+}
+
+.ministryLeaders h4 {
+    color: var(--color-primary);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.leadersGrid {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.leaderCard {
+    text-align: center;
+}
+
+.leaderCard img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 0.5rem;
+    border: 3px solid var(--color-secondary);
+}
+
+.leaderCard h5 {
+    font-size: 1rem;
+    margin: 0;
+    color: var(--color-text);
+}
+
+.leaderCard p {
+    font-size: 0.85rem;
+    color: #777;
+}
+
+.ministryImage {
+    position: relative;
+}
+
+.ministryImage img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+    display: block;
+}
+
+.buttonFloat {
+    margin-top: 1rem;
+    display: block; /* Make the button take full width below the image */
+    text-align: center;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 900px) {
+    .ministryDetail {
+        grid-template-columns: 1fr; /* Stack info and image */
+        gap: 2rem;
+    }
+    .leadersGrid {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}

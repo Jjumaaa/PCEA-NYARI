@@ -1,0 +1,117 @@
+.contactSection {
+    background-color: var(--color-background);
+}
+
+.contactGrid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr; /* Contact info slightly wider than form */
+    gap: 3rem;
+}
+
+/* Contact Info Styling */
+.contactInfo h3 {
+    font-size: 1.8rem;
+    color: var(--color-primary);
+    margin-bottom: 1.5rem;
+}
+
+.contactMethod {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+}
+
+.contactMethod i {
+    font-size: 1.5rem;
+    color: var(--color-secondary);
+    margin-right: 1rem;
+    padding-top: 0.2rem;
+}
+
+.contactMethod h4 {
+    font-size: 1.1rem;
+    margin: 0;
+    color: var(--color-primary);
+}
+
+.contactMethod p, .staffContacts li, .officeHours li {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 0.2rem;
+}
+
+.staffContacts, .officeHours {
+    margin-top: 2rem;
+}
+
+.staffContacts h4, .officeHours h4 {
+    color: var(--color-primary);
+    border-bottom: 1px solid #eee;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Newsletter Section */
+.newsletterSection {
+    background-color: var(--color-light-bg);
+    padding: 3rem 0;
+    margin-top: var(--spacing-lg);
+}
+
+.newsletterContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-primary);
+    color: var(--color-light-text);
+    padding: 2.5rem;
+    border-radius: var(--border-radius);
+}
+
+.newsletterText h3 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.newsletterText p {
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
+.newsletterForm {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.newsletterForm input {
+    padding: 0.75rem 1rem;
+    border: none;
+    border-radius: 5px;
+    min-width: 250px;
+    font-size: 1rem;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 1024px) {
+    .contactGrid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .newsletterContent {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.5rem;
+    }
+    .newsletterText {
+        margin-bottom: 1.5rem;
+    }
+    .newsletterForm {
+        flex-direction: column;
+        width: 100%;
+    }
+    .newsletterForm input, .newsletterForm button {
+        width: 100%;
+    }
+}
