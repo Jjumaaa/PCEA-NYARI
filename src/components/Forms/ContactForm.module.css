@@ -1,0 +1,66 @@
+.contactFormContainer {
+    padding: 2rem;
+    background-color: var(--color-light-bg);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.contactFormContainer h3 {
+    color: var(--color-primary);
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid var(--color-secondary);
+    padding-bottom: 0.5rem;
+}
+
+.formGroup {
+    margin-bottom: 1rem;
+}
+
+.formGroup label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    color: #444;
+    font-size: 0.95rem;
+}
+
+.contactFormContainer input[type="text"],
+.contactFormContainer input[type="email"],
+.contactFormContainer input[type="tel"],
+.contactFormContainer select,
+.contactFormContainer textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.contactFormContainer input:focus,
+.contactFormContainer select:focus,
+.contactFormContainer textarea:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(0, 77, 64, 0.1); /* Subtle focus ring */
+    outline: none;
+}
+
+.contactFormContainer textarea {
+    resize: vertical;
+}
+
+.fullWidth {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.successMessage {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 0.75rem;
+    border: 1px solid #c3e6cb;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    text-align: center;
+}
