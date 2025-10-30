@@ -1,0 +1,170 @@
+.header {
+    background-color: var(--color-background);
+    padding: 1rem 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    position: sticky; /* Keeps the header visible on scroll */
+    top: 0;
+    z-index: 1000;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logoImg {
+    height: 50px; /* Adjusted from original to fit a logo image */
+    margin-right: 0.5rem;
+}
+
+.logoText h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin: 0;
+}
+
+.logoText p {
+    font-size: 0.8rem;
+    color: #666;
+    margin: 0;
+}
+
+/* --- Navigation --- */
+.mainNav ul {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.mainNav li {
+    position: relative;
+}
+
+.mainNav a {
+    color: var(--color-text);
+    font-weight: 600;
+    padding: 0.5rem 0;
+    transition: color var(--transition-speed);
+    display: block;
+}
+
+.mainNav a:hover {
+    color: var(--color-primary);
+}
+
+/* Dropdown styling */
+.dropdown {
+    position: relative;
+}
+
+.dropdownMenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--color-background);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-top: 3px solid var(--color-primary);
+    min-width: 180px;
+    z-index: 10;
+}
+
+.dropdown:hover .dropdownMenu {
+    display: block;
+}
+
+.dropdownMenu li {
+    border-bottom: 1px solid var(--color-light-bg);
+}
+
+.dropdownMenu a {
+    padding: 0.75rem 1rem;
+    font-weight: 400;
+    color: var(--color-text);
+}
+
+.dropdownMenu a:hover {
+    background-color: var(--color-light-bg);
+    color: var(--color-primary);
+}
+
+/* Header CTA */
+.headerCta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.btnPrimary {
+    background-color: var(--color-primary);
+    color: var(--color-light-text);
+    padding: 0.6rem 1.2rem;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    transition: background-color var(--transition-speed);
+}
+
+.btnPrimary:hover {
+    background-color: #003e33; /* Darker shade */
+    color: var(--color-light-text);
+}
+
+.mobileMenuBtn {
+    display: none; /* Hidden by default on desktop */
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--color-primary);
+}
+
+/* --- Mobile Responsiveness (Cool CSS) --- */
+@media (max-width: 1024px) {
+    /* Hide main nav and show mobile button */
+    .mainNav {
+        display: none;
+    }
+
+    .mobileMenuBtn {
+        display: block;
+    }
+    
+    /* When menu is active (you'll handle the actual state/JS for this) */
+    .mainNav.active {
+        display: block;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--color-background);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 1rem 0;
+    }
+
+    .mainNav ul {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .mainNav li {
+        width: 100%;
+        border-bottom: 1px solid var(--color-light-bg);
+    }
+    
+    .mainNav a {
+        padding: 0.75rem 1rem;
+    }
+
+    /* Adjust dropdown for mobile */
+    .dropdownMenu {
+        position: static;
+        box-shadow: none;
+        border-top: none;
+        min-width: auto;
+        padding-left: 1rem;
+    }
+}
