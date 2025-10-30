@@ -1,0 +1,64 @@
+.ministriesTabs {
+    margin-top: 2rem;
+}
+
+.tabButtons {
+    display: flex;
+    overflow-x: auto; /* Allows horizontal scrolling on small screens */
+    white-space: nowrap;
+    border-bottom: 2px solid #e0e0e0;
+    margin-bottom: 2rem;
+}
+
+.tabBtn {
+    background: none;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #777;
+    transition: color 0.3s, border-bottom 0.3s;
+    flex-shrink: 0; /* Prevents buttons from shrinking on overflow */
+}
+
+.tabBtn:hover {
+    color: var(--color-primary);
+}
+
+.tabBtn.active {
+    color: var(--color-primary);
+    border-bottom: 3px solid var(--color-primary);
+    /* Subtle elevation on active tab */
+    box-shadow: 0 2px 0 -1px var(--color-primary);
+}
+
+.tabContent {
+    display: none;
+    animation: fadeIn 0.4s ease-out;
+}
+
+.tabContent.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Mobile: Ensure tabs are easy to tap */
+@media (max-width: 600px) {
+    .tabButtons {
+        display: grid;
+        grid-auto-flow: column; /* Force horizontal layout */
+        grid-auto-columns: minmax(100px, 1fr); /* Equal columns or min size */
+        gap: 0;
+        margin-bottom: 1.5rem;
+    }
+
+    .tabBtn {
+        padding: 0.75rem 0.5rem;
+        font-size: 0.9rem;
+    }
+}
