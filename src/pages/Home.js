@@ -1,13 +1,24 @@
+// src/pages/Home.js
+
 import React from 'react';
 import { Link } from 'react-router-dom';
-import styles from './Home.module.css'; // Assume Home.module.css exists
+import styles from './Home.module.css';
+import MinistryTabs from '../components/Common/MinistryTabs'; // Line 4: MinistryTabs is imported
 
-// NOTE: All image paths must be accessible in your public folder (e.g., public/images/exterior.jpg)
+// Reusable component for the info cards at the bottom (unchanged)
+// const InfoCard = ({ iconClass, title, text }) => (
+//     <div className={styles.infoCard}>
+//         <div className={styles.iconWrapper}>
+//             <i className={`fas ${iconClass}`}></i>
+//         </div>
+//         <h4>{title}</h4>
+//         <p>{text}</p>
+//     </div>
+// );
+
 const HeroSection = () => {
     return (
         <section id="home" className={styles.hero}>
-            {/* For a true React slider, you'd use state/useEffect for transitions. 
-                Here, we show the static structure of the first slide. */}
             <div className={styles.heroSlider}>
                 <div 
                     className={`${styles.slide} ${styles.active}`} 
@@ -24,9 +35,13 @@ const HeroSection = () => {
                         </div>
                     </div>
                 </div>
-                {/* The other slides would be included here, managed by React state */}
             </div>
-            {/* Slider controls omitted for pure structural conversion, but would use state/handlers */}
+            
+            {/* 👇 MINISTRY TABS MUST BE RENDERED HERE TO RESOLVE THE WARNING 👇 */}
+            <div className={styles.ministryTabsWrapper}> 
+                 <MinistryTabs /> 
+            </div>
+            {/* 👆 End Ministry Tabs 👆 */}
         </section>
     );
 };
@@ -66,10 +81,6 @@ const Home = () => {
     <>
       <HeroSection />
       <QuickInfoBar />
-      {/* You would add components for About, Sermons, Events, etc. here or route them separately */}
-      {/* <AboutSection /> */}
-      {/* <SermonsSection /> */}
-      {/* etc. */}
     </>
   );
 };

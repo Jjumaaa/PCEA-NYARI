@@ -113,6 +113,25 @@
     color: var(--color-text);
 }
 
+.ministryTabsWrapper {
+    position: absolute; /* Position relative to the .hero section */
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%); /* Center the tabs horizontally */
+    width: 100%;
+    padding: 0 1rem; /* Ensure padding on small screens */
+    max-width: 600px; /* Match the max-width of the tabs component */
+    z-index: 50;
+}
+
+/* You might need to adjust the min-height of the .hero section 
+   to ensure the tabs don't cut off the hero content when on a small screen */
+.hero {
+    position: relative;
+    min-height: 90vh; /* Increased height to accommodate the tabs at the bottom */
+    /* ... rest of your .hero styles ... */
+}
+
 
 /* --- Mobile Responsiveness --- */
 @media (max-width: 768px) {
