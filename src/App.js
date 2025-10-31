@@ -1,41 +1,42 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './components/Header/Navbar';
-import Footer from './components/Footer/Footer';
-import Home from './pages/Home';
+
+// Import Layout Component
+import Header from './components/Layout/Header'; // Line 6: Header is imported
+
+// Import Page Components
 import About from './pages/About';
-import Ministries from './pages/Ministries';
-import Sermons from './pages/Sermons';
+import Contact from './pages/Contact';
 import Events from './pages/Events';
 import Give from './pages/Give';
-import Contact from './pages/Contact';
+import Ministries from './pages/Ministries';
+import Sermons from './pages/Sermons';
+import Home from './pages/Home'; // Assuming you have a Home component
 
-function App() {
-  return (
-    <Router>
-      {/* Header components will be outside the Routes so they show on every page */}
-      <Navbar />
-      
-      <main>
-        <Routes>
-          {/* Note: Your original HTML was a single-page structure. 
-              We'll use this multi-page structure for React best practice, 
-              mapping each main section to a separate route. */}
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/ministries" element={<Ministries />} />
-          <Route path="/sermons" element={<Sermons />} />
-          <Route path="/events" element={<Events />} />
-          <Route path="/give" element={<Give />} />
-          <Route path="/contact" element={<Contact />} />
-          {/* Fallback route for 404 - optional */}
-          {/* <Route path="*" element={<div>404 Page Not Found</div>} /> */}
-        </Routes>
-      </main>
+// Import your Global CSS (e.g., App.css, index.css) here
 
-      <Footer />
-    </Router>
-  );
-}
+const App = () => {
+    return (
+        // The Header is now USED here, which resolves the warning.
+        <Router>
+            <Header /> 
+            
+            <main>
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/about" element={<About />} />
+                    <Route path="/sermons" element={<Sermons />} />
+                    <Route path="/ministries" element={<Ministries />} />
+                    <Route path="/events" element={<Events />} />
+                    <Route path="/give" element={<Give />} />
+                    <Route path="/contact" element={<Contact />} />
+                    {/* Add a 404 route here */}
+                </Routes>
+            </main>
+
+            {/* Footer component would typically go here */}
+        </Router>
+    );
+};
 
 export default App;
