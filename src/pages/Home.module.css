@@ -1,7 +1,9 @@
 /* --- Hero Section Styling --- */
 .hero {
     position: relative;
-    min-height: 80vh; /* Responsive height */
+    /* Use padding-bottom to reserve space for the ministry tabs *inside* the section. */
+    padding-bottom: 5rem; 
+    min-height: 90vh; /* Responsive height */
     color: var(--color-light-text);
     overflow: hidden;
 }
@@ -15,8 +17,6 @@
     justify-content: center;
     height: 100%;
     width: 100%;
-    /* Note: Slider functionality requires JavaScript/state, which is outside basic conversion scope. 
-       We'll style the active slide here. */
 }
 
 .heroContent {
@@ -72,10 +72,23 @@
     color: var(--color-primary);
 }
 
-/* --- Quick Info Bar Styling --- */
+/* --- Ministry Tabs Wrapper (Fixes the visual placement) --- */
+.ministryTabsWrapper {
+    position: absolute; /* Position relative to the .hero section */
+    bottom: 0; /* Align to the very bottom edge of the hero */
+    left: 50%;
+    transform: translateX(-50%); /* Center the tabs horizontally */
+    width: 100%;
+    padding: 0 1rem;
+    max-width: 600px; 
+    z-index: 50;
+}
+
+/* --- Quick Info Bar Styling (The cards below the hero) --- */
 .quickInfo {
     background-color: var(--color-light-bg);
-    padding: 1.5rem 0;
+    padding: 3rem 0; /* Adequate vertical spacing is critical for scrolling */
+    margin-top: 0; /* Crucial: Do not use negative margins here */
 }
 
 .infoContainer {
@@ -113,25 +126,6 @@
     color: var(--color-text);
 }
 
-.ministryTabsWrapper {
-    position: absolute; /* Position relative to the .hero section */
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%); /* Center the tabs horizontally */
-    width: 100%;
-    padding: 0 1rem; /* Ensure padding on small screens */
-    max-width: 600px; /* Match the max-width of the tabs component */
-    z-index: 50;
-}
-
-/* You might need to adjust the min-height of the .hero section 
-   to ensure the tabs don't cut off the hero content when on a small screen */
-.hero {
-    position: relative;
-    min-height: 90vh; /* Increased height to accommodate the tabs at the bottom */
-    /* ... rest of your .hero styles ... */
-}
-
 
 /* --- Mobile Responsiveness --- */
 @media (max-width: 768px) {
@@ -153,5 +147,15 @@
     }
     .infoItem {
         justify-content: flex-start; /* Align text to the left for better readability */
+    }
+    .ministryTabsWrapper {
+        position: static; /* Let tabs flow normally on small screens */
+        transform: none;
+        max-width: none;
+        padding: 0;
+    }
+    .hero {
+        padding-bottom: 1rem; /* Less bottom padding when tabs are static */
+        min-height: 60vh;
     }
 }
